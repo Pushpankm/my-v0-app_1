@@ -317,25 +317,30 @@ export default function LeakDetectionRepairPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
-              Frequently Asked Questions About Leak Detection
-            </h2>
-            <div className="max-w-3xl mx-auto space-y-6">
-              {faqData.map((faq, index) => (
-                <Card key={index}>
-                  <CardHeader>
-                    <CardTitle className="text-lg text-blue-800">{faq.question}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-700">{faq.answer}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
+<section className="py-16">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+      Frequently Asked Questions About Leak Detection
+    </h2>
+    <div className="max-w-3xl mx-auto space-y-6">
+      {Array.isArray(faqData) && faqData.length > 0 ? (
+        faqData.map((faq, index) => (
+          <Card key={index}>
+            <CardHeader>
+              <CardTitle className="text-lg text-blue-800">{faq.question}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-700">{faq.answer}</p>
+            </CardContent>
+          </Card>
+        ))
+      ) : (
+        <p className="text-center text-gray-500">No FAQs available at the moment.</p>
+      )}
+    </div>
+  </div>
+</section>
+
 
         {/* CTA Section */}
         <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
