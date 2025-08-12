@@ -3,7 +3,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Phone, Clock, MapPin, Star, Wrench, Droplets, Zap, Shield } from "lucide-react"
 import Link from "next/link"
 import { FAQSchema } from "@/components/seo/faq-schema"
-import { LocalBusinessSchema } from "@/components/seo/local-business-schema"
+import { LocalBusinessSchema } from "@/components/seo/local-business-schema";
+
 
 // Service data for internal linking
 const services = [
